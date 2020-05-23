@@ -19,6 +19,9 @@ public class RequestFilter implements Filter {
     log.info(
         "Value of AUTH-TOKEN  -> {}",
         ((HttpServletRequest) servletRequest).getHeader("AUTH-TOKEN"));
+
+    log.info("Value of User-Name -> {}", servletRequest.getParameter("user-name"));
+
     filterChain.doFilter(servletRequest, servletResponse);
   }
 }
